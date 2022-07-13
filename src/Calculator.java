@@ -3,8 +3,8 @@ import javax.swing.*;
 public class Calculator {
 
 	
-	JLabel hinweis;
-	int ergebnis;
+	private JLabel hinweis;
+	private int ergebnis;
 	
 	public Calculator(JLabel hinweis) {
 		this.hinweis = hinweis;

@@ -8,11 +8,11 @@ public class Input extends JFrame implements ActionListener{
 	/**
 	 
 	 */
-	JTextField[][] scores;
-	JButton submit;
-	JLabel ergebnis;
-	JLabel hinweis;
-	Calculator c;
+	private JTextField[][] scores;
+	private JButton submit;
+	private JLabel ergebnis;
+	private JLabel hinweis;
+	private Calculator c;
 	private static final long serialVersionUID = 1L;
 
 	public Input() {
