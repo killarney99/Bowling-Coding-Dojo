@@ -5,138 +5,168 @@ import org.junit.Test;
 public class BowlingTest {
 
 	Input input;
+	
 	@Test
 	public void test_evaluate_first0() {
 		String[] scores = {"1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(1,input.evaluateFirst(testField, 0));
+		assertEquals(1,input.c.evaluateFirst(testField, 0));
 	}
 	@Test
 	public void test_evaluate_second0() {
 		String[] scores = {"1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(2,input.evaluateSecond(testField, 0, 1));
+		assertEquals(2,input.c.evaluateSecond(testField, 0, 1));
 	}
 	@Test
 	public void test_evaluate_first1() {
 		String[] scores = {"1","2","3","4","5","1","X","-","4","5","1","2","3","4","5","1","2","3","4","5","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(10,input.evaluateFirst(testField, 3));
+		assertEquals(10,input.c.evaluateFirst(testField, 3));
 	}
 	@Test
 	public void test_evaluate_second1() {
 		String[] scores = {"1","2","3","4","5","1","5","6","4","5","1","2","3","4","5","1","2","3","4","5","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(6,input.evaluateSecond(testField, 3, 5));
+		assertEquals(6,input.c.evaluateSecond(testField, 3, 5));
 	}
 	@Test
 	public void test_evaluate_first2() {
 		String[] scores = {"1","2","3","4","5","1","X","-","4","5","1","2","3","4","5","1","2","3","/","5","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(-1,input.evaluateFirst(testField, 9));
+		assertEquals(-1,input.c.evaluateFirst(testField, 9));
 	}
 	@Test
 	public void test_evaluate_second2() {
 		String[] scores = {"1","2","3","4","5","1","5","6","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(6,input.evaluateSecond(testField, 9, input.evaluateFirst(testField,9)));
+		assertEquals(6,input.c.evaluateSecond(testField, 9, input.c.evaluateFirst(testField,9)));
 	}
 	@Test
 	public void test_evaluate_throw0() {
 		String[] scores = {"1","2","3","4","5","1","5","6","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(3,input.evaluateThrow(testField, 0));
+		assertEquals(3,input.c.evaluateThrow(testField, 0));
 	}
 	@Test
 	public void test_evaluate_throw1() {
 		String[] scores = {"X","-","X","-","X","-","5","6","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(25,input.evaluateThrow(testField, 1));
+		assertEquals(25,input.c.evaluateThrow(testField, 1));
 	}
 	@Test
 	public void test_evaluate_throw2() {
 		String[] scores = {"X","-","X","-","X","-","5","6","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(-1,input.evaluateThrow(testField, 2));
+		assertEquals(-1,input.c.evaluateThrow(testField, 2));
 	}
 	@Test
 	public void test_evaluate_throw3() {
 		String[] scores = {"X","-","X","-","X","-","5","4","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(19,input.evaluateThrow(testField, 2));
+		assertEquals(19,input.c.evaluateThrow(testField, 2));
 	}
 	@Test
 	public void test_evaluate_throw4() {
 		String[] scores = {"X","-","X","-","X","-","5","/","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(20,input.evaluateThrow(testField, 2));
+		assertEquals(20,input.c.evaluateThrow(testField, 2));
 	}
 	@Test
 	public void test_evaluate_throw5() {
 		String[] scores = {"X","-","X","-","-","-","5","/","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(0,input.evaluateThrow(testField, 2));
+		assertEquals(0,input.c.evaluateThrow(testField, 2));
 	}
 	@Test
 	public void test_evaluate_throw6() {
 		String[] scores = {"X","-","X","-","-","-","5","/","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(14,input.evaluateThrow(testField, 3));
+		assertEquals(14,input.c.evaluateThrow(testField, 3));
 	}
 	@Test
 	public void test_evaluate_throw7() {
 		String[] scores = {"X","-","X","-","X","-","5","4","4","5","1","2","3","4","5","1","2","3","4","/","1","2"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(25,input.evaluateThrow(testField, 1));
+		assertEquals(25,input.c.evaluateThrow(testField, 1));
 	}
 	@Test
 	public void test_evaluate_throw8() {
 		String[] scores = {"X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","X"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(30,input.evaluateThrow(testField, 5));
+		assertEquals(30,input.c.evaluateThrow(testField, 5));
 	}
 	@Test
 	public void testComplete0() {
 		String[] scores = {"9","-","9","-","9","-","9","-","9","-","9","-","9","-","9","-","9","-","9","-","-","-"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals("90",input.evaluate(testField));
+		assertEquals("90",input.c.evaluate(testField));
 	}
 	@Test
 	public void testComplete1() {
 		String[] scores = {"5","/","5","/","5","/","5","/","5","/","5","/","5","/","5","/","5","/","5","/","5","-","-"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals("150",input.evaluate(testField));
+		assertEquals("150",input.c.evaluate(testField));
 	}
 	@Test
 	public void testComplete2() {
-		String[] scores = {"X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","X"};
+		String[] scores = {"1","2","3","4","4","3","2","1","1","2","3","4","4","3","2","1","1","2","3","4","","",""};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals("300",input.evaluate(testField));
+		assertEquals("50",input.c.evaluate(testField));
 	}
+	@Test
+	public void testComplete3() {
+		String[] scores = {"1","2","3","4","4","3","2","1","1","2","3","4","4","3","2","1","1","2","3","/","3",""};
+		JTextField[][] testField = testTextField(scores);
+		Input input = new Input();
+		assertEquals("56",input.c.evaluate(testField));
+	}
+	@Test
+	public void testComplete4() {
+		String[] scores = {"1","2","X","4","4","3","2","1","1","2","3","4","4","3","2","1","1","2","3","4","",""};
+		JTextField[][] testField = testTextField(scores);
+		Input input = new Input();
+		assertEquals("60",input.c.evaluate(testField));
+	}
+	@Test
+	public void testComplete5() {
+		String[] scores = {"1","2","X","4","4","3","2","1","1","2","3","4","4","3","2","1","1","2","X","-","4","4"};
+		JTextField[][] testField = testTextField(scores);
+		Input input = new Input();
+		assertEquals("71",input.c.evaluate(testField));
+	}
+	@Test
+	public void testComplete6() {
+		String[] scores = {"1","2","X","4","4","9","2","1","1","2","3","4","4","3","2","1","1","2","X","-","4","4"};
+		JTextField[][] testField = testTextField(scores);
+		Input input = new Input();
+		assertEquals("Ungültig!",input.c.evaluate(testField));
+	}
+	
 	@Test
 	public void test_evaluate_strikeseries() {
 		String[] scores = {"X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","-","X","X"};
 		JTextField[][] testField = testTextField(scores);
 		Input input = new Input();
-		assertEquals(30,input.evaluateThrow(testField, 9));
+		assertEquals(30,input.c.evaluateThrow(testField, 9));
 	}
 	
 	

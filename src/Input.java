@@ -12,6 +12,7 @@ public class Input extends JFrame implements ActionListener{
 	JButton submit;
 	JLabel ergebnis;
 	JLabel hinweis;
+	Calculator c;
 	private static final long serialVersionUID = 1L;
 
 	public Input() {
@@ -54,6 +55,7 @@ public class Input extends JFrame implements ActionListener{
 		hinweis = new JLabel();
 		this.add(hinweis);
 		
+		c = new Calculator(hinweis);
 		this.setLayout(new FlowLayout(FlowLayout.CENTER,5,5));
 		setVisible(true);
 	}
@@ -62,15 +64,15 @@ public class Input extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == this.submit){
 			
-            ergebnis.setText(this.evaluate(scores));
+            ergebnis.setText(c.evaluate(scores));
         }
 		
 	}
-	
+	/*
 	public String evaluate(JTextField[][] s) {
 		int ergebnis = 0;
 		for(int i = 0; i < 10; i++) {
-			int pins = this.evaluateThrow(s, i);
+			int pins = c.evaluateThrow(s, i);
 			if(pins >= 0) {
 				ergebnis = ergebnis + pins;
 			}else {
@@ -192,5 +194,5 @@ public class Input extends JFrame implements ActionListener{
 		}
 		return -1;
 	}
-	
+	*/
 }
