@@ -22,7 +22,7 @@ public class Calculator {
 			}
 		}
 		hinweis.setText("");
-		return Integer.toString(this.ergebnis);
+		return Integer.toString(this.getErgebnis());
 	}
 	
 	public int evaluateThrow(JTextField[][] scores, int i) {
@@ -95,9 +95,7 @@ public class Calculator {
 			default:
 				hinweis.setText("Invalid Input in second field of frame " + Integer.toString(i+1));
 				break;
-			
 			}
-			
 		}
 		return -1;
 	}
@@ -140,6 +138,22 @@ public class Calculator {
 			hinweis.setText("Second Value in Frame " + Integer.toString(i+1) + " is invalid!");
 			return -1;
 		}
+	}
+
+	public JLabel getHinweis() {
+		return hinweis;
+	}
+
+	public void setHinweis(JLabel hinweis) {
+		this.hinweis = hinweis;
+	}
+
+	public int getErgebnis() {
+		return ergebnis;
+	}
+
+	public void setErgebnis(int ergebnis) {
+		this.ergebnis = ergebnis;
 	}
 	
 	

@@ -68,6 +68,47 @@ public class Input extends JFrame implements ActionListener{
         }
 		
 	}
+
+	public JTextField[][] getScores() {
+		return scores;
+	}
+
+	public void setScores(JTextField[][] scores) {
+		this.scores = scores;
+	}
+
+	public JButton getSubmit() {
+		return submit;
+	}
+
+	public void setSubmit(JButton submit) {
+		this.submit = submit;
+	}
+
+	public JLabel getErgebnis() {
+		return ergebnis;
+	}
+
+	public void setErgebnis(JLabel ergebnis) {
+		this.ergebnis = ergebnis;
+	}
+
+	public JLabel getHinweis() {
+		return hinweis;
+	}
+
+	public void setHinweis(JLabel hinweis) {
+		this.hinweis = hinweis;
+	}
+
+	public Calculator getC() {
+		return c;
+	}
+
+	public void setC(Calculator c) {
+		this.c = c;
+	}
+	
 	/*
 	public String evaluate(JTextField[][] s) {
 		int ergebnis = 0;
